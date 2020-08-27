@@ -1,0 +1,8 @@
+[X] Basic Functionality
+[X] Channels to Handle Requests
+[X] Cookie parsing
+[X] Static File Serving
+[X] Forms
+[X] Multipart + File uploads
+[ ] HTTPS
+[ ] WS?
