@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="crystal_docs.project_version" content="0.1.0">
+<meta name="crystal_docs.project_name" content="coral">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="coral">
+  <title>Coral::Response - coral 0.1.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          coral
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.1.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="coral/toplevel" data-name="top level namespace">
+      <a href="../toplevel.html">Top Level Namespace</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="coral/Coral" data-name="coral">
+      <a href="../Coral.html">Coral</a>
+      
+        <ul>
+  
+  <li class=" " data-id="coral/Coral/BodyParser" data-name="coral::bodyparser">
+      <a href="../Coral/BodyParser.html">BodyParser</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/JSONBodyParser" data-name="coral::jsonbodyparser">
+      <a href="../Coral/JSONBodyParser.html">JSONBodyParser</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/MultipartFile" data-name="coral::multipartfile">
+      <a href="../Coral/MultipartFile.html">MultipartFile</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/Request" data-name="coral::request">
+      <a href="../Coral/Request.html">Request</a>
+      
+    </li>
+  
+  <li class=" current" data-id="coral/Coral/Response" data-name="coral::response">
+      <a href="../Coral/Response.html">Response</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/Server" data-name="coral::server">
+      <a href="../Coral/Server.html">Server</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/URLBodyParser" data-name="coral::urlbodyparser">
+      <a href="../Coral/URLBodyParser.html">URLBodyParser</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="coral/Status" data-name="status">
+      <a href="../Status.html">Status</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Coral::Response
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Coral/Response.html">Coral::Response</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Represents a response. Unlike <code><a href="../Coral/Request.html">Request</a></code>, this class is meant to be constructed manually, and should be returned from
+every handler.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="DEFAULTHEADERS">
+        <strong>DEFAULTHEADERS</strong> = <code>{<span class="s">&quot;Content-Type&quot;</span> => <span class="s">&quot;text/plain&quot;</span>}</code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS,cookies:CookieMap=CookieMap.new)-class-method" class="signature"><strong>.new</strong>(body : String, status : Status = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>, cookies : CookieMap = <span class="t">CookieMap</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Creates a new response.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#css(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method" class="signature"><strong>.css</strong>(body : String, status : Status = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#css_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method" class="signature"><strong>.css_file</strong>(filename : String, status : Status = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#encode_cookies(cookies:CookieMap)-class-method" class="signature"><strong>.encode_cookies</strong>(cookies : CookieMap)</a>
+        
+          <div class="summary"><p>Encodes a <code>Hash(String, String)</code> representing cookies to a string suitable for use with the Set-Cookie header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#html(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method" class="signature"><strong>.html</strong>(body : String, status : Status = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)</a>
+        
+          <div class="summary"><p>Create MIME methods for text/html, text/css, text/plain, application/javascript, and application/json.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#html_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method" class="signature"><strong>.html_file</strong>(filename : String, status : Status = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)</a>
+        
+          <div class="summary"><p>Create MIME methods for text/html, text/css, text/plain, application/javascript, and application/json.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#javascript(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method" class="signature"><strong>.javascript</strong>(body : String, status : Status = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#javascript_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method" class="signature"><strong>.javascript_file</strong>(filename : String, status : Status = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#json(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method" class="signature"><strong>.json</strong>(body : String, status : Status = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#json_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method" class="signature"><strong>.json_file</strong>(filename : String, status : Status = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#plain(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method" class="signature"><strong>.plain</strong>(body : String, status : Status = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#plain_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method" class="signature"><strong>.plain_file</strong>(filename : String, status : Status = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#body:String-instance-method" class="signature"><strong>#body</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cookies:CookieMap-instance-method" class="signature"><strong>#cookies</strong> : CookieMap</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cookies=(cookies:CookieMap)-instance-method" class="signature"><strong>#cookies=</strong>(cookies : CookieMap)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#headers:HeaderMap-instance-method" class="signature"><strong>#headers</strong> : HeaderMap</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#headers=(headers:HeaderMap)-instance-method" class="signature"><strong>#headers=</strong>(headers : HeaderMap)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#status:Status-instance-method" class="signature"><strong>#status</strong> : Status</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s-instance-method" class="signature"><strong>#to_s</strong></a>
+        
+          <div class="summary"><p>Converts a response to a raw HTTP response string.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="macro-summary" class="anchor" href="#macro-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Macro Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#mime_constructor(category,mime)-macro" class="signature"><strong>mime_constructor</strong>(category, mime)</a>
+        
+          <div class="summary"><p>Creates methods for generating a response of a given MIME type.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS,cookies:CookieMap=CookieMap.new)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(body : String, status : <a href="../Status.html">Status</a> = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>, cookies : CookieMap = <span class="t">CookieMap</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#new(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS,cookies:CookieMap=CookieMap.new)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a new response. Should be called manually. Can take many arguments:</p>
+
+<ul><li><code><a href="../Coral/Response.html#body:String-instance-method">#body</a></code>, the response body.</li><li><code><a href="../Coral/Response.html#status:Status-instance-method">#status</a></code>, the status code - should be a member of <code><a href="../Status.html">Status</a></code>.</li><li><code><a href="../Coral/Response.html#headers:HeaderMap-instance-method">#headers</a></code>, the response headers.</li><li><code><a href="../Coral/Response.html#cookies:CookieMap-instance-method">#cookies</a></code>, the cookies to set in the client.
+Example:</li></ul></ul>
+
+<pre><code><span class="t">Coral</span><span class="t">::</span><span class="t">Response</span>.<span class="k">new</span> <span class="s">&quot;body&quot;</span>, <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, { <span class="s">&quot;Host&quot;</span> => <span class="s">&quot;example.com&quot;</span> } <span class="c"># =&gt; &lt;Response&gt;</span></code></pre>
+
+<p><span class="flag purple">NOTE</span>  while this method can be called manually, and is perfectly suitable for use, it is
+more common to use the associated methods for MIME types.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="css(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">
+      <div class="signature">
+        
+        def self.<strong>css</strong>(body : String, status : <a href="../Status.html">Status</a> = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)
+
+        <a class="method-permalink" href="#css(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="css_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">
+      <div class="signature">
+        
+        def self.<strong>css_file</strong>(filename : String, status : <a href="../Status.html">Status</a> = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)
+
+        <a class="method-permalink" href="#css_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="encode_cookies(cookies:CookieMap)-class-method">
+      <div class="signature">
+        
+        def self.<strong>encode_cookies</strong>(cookies : CookieMap)
+
+        <a class="method-permalink" href="#encode_cookies(cookies:CookieMap)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Encodes a <code>Hash(String, String)</code> representing cookies to a string suitable for use with the Set-Cookie header.
+Basically the inverse of <code><a href="../Coral/Request.html#parse_cookies(header:String)-class-method">Request.parse_cookies</a></code>. Although mostly used in encoding responses, it too can be
+called manually.
+Example:</p>
+
+<pre><code><span class="t">Coral</span><span class="t">::</span><span class="t">Response</span>.encode_cookies { <span class="s">&quot;a&quot;</span> => <span class="s">&quot;b&quot;</span>, <span class="s">&quot;c&quot;</span> => <span class="s">&quot;d&quot;</span> } <span class="c"># a=b;c=d</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="html(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">
+      <div class="signature">
+        
+        def self.<strong>html</strong>(body : String, status : <a href="../Status.html">Status</a> = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)
+
+        <a class="method-permalink" href="#html(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Create MIME methods for text/html, text/css, text/plain, application/javascript, and application/json.</p>
+
+<p><span class="flag purple">NOTE</span>  application/javascript is used rather than text/javascript because it is more modern.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="html_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">
+      <div class="signature">
+        
+        def self.<strong>html_file</strong>(filename : String, status : <a href="../Status.html">Status</a> = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)
+
+        <a class="method-permalink" href="#html_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Create MIME methods for text/html, text/css, text/plain, application/javascript, and application/json.</p>
+
+<p><span class="flag purple">NOTE</span>  application/javascript is used rather than text/javascript because it is more modern.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="javascript(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">
+      <div class="signature">
+        
+        def self.<strong>javascript</strong>(body : String, status : <a href="../Status.html">Status</a> = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)
+
+        <a class="method-permalink" href="#javascript(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="javascript_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">
+      <div class="signature">
+        
+        def self.<strong>javascript_file</strong>(filename : String, status : <a href="../Status.html">Status</a> = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)
+
+        <a class="method-permalink" href="#javascript_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="json(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">
+      <div class="signature">
+        
+        def self.<strong>json</strong>(body : String, status : <a href="../Status.html">Status</a> = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)
+
+        <a class="method-permalink" href="#json(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="json_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">
+      <div class="signature">
+        
+        def self.<strong>json_file</strong>(filename : String, status : <a href="../Status.html">Status</a> = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)
+
+        <a class="method-permalink" href="#json_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="plain(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">
+      <div class="signature">
+        
+        def self.<strong>plain</strong>(body : String, status : <a href="../Status.html">Status</a> = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)
+
+        <a class="method-permalink" href="#plain(body:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="plain_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">
+      <div class="signature">
+        
+        def self.<strong>plain_file</strong>(filename : String, status : <a href="../Status.html">Status</a> = <span class="t">Status</span><span class="t">::</span><span class="t">Ok</span>, headers : HeaderMap = <span class="t">DEFAULTHEADERS</span>)
+
+        <a class="method-permalink" href="#plain_file(filename:String,status:Status=Status::Ok,headers:HeaderMap=DEFAULTHEADERS)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="body:String-instance-method">
+      <div class="signature">
+        
+        def <strong>body</strong> : String
+
+        <a class="method-permalink" href="#body:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cookies:CookieMap-instance-method">
+      <div class="signature">
+        
+        def <strong>cookies</strong> : CookieMap
+
+        <a class="method-permalink" href="#cookies:CookieMap-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cookies=(cookies:CookieMap)-instance-method">
+      <div class="signature">
+        
+        def <strong>cookies=</strong>(cookies : CookieMap)
+
+        <a class="method-permalink" href="#cookies=(cookies:CookieMap)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="headers:HeaderMap-instance-method">
+      <div class="signature">
+        
+        def <strong>headers</strong> : HeaderMap
+
+        <a class="method-permalink" href="#headers:HeaderMap-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="headers=(headers:HeaderMap)-instance-method">
+      <div class="signature">
+        
+        def <strong>headers=</strong>(headers : HeaderMap)
+
+        <a class="method-permalink" href="#headers=(headers:HeaderMap)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="status:Status-instance-method">
+      <div class="signature">
+        
+        def <strong>status</strong> : <a href="../Status.html">Status</a>
+
+        <a class="method-permalink" href="#status:Status-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>
+
+        <a class="method-permalink" href="#to_s-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Converts a response to a raw HTTP response string. Should not be called manually; invoked only in the server.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="macro-detail" class="anchor" href="#macro-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Macro Detail
+  </h2>
+  
+    <div class="entry-detail" id="mime_constructor(category,mime)-macro">
+      <div class="signature">
+        
+        macro <strong>mime_constructor</strong>(category, mime)
+
+        <a class="method-permalink" href="#mime_constructor(category,mime)-macro">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates methods for generating a response of a given MIME type. Given a category (eg., application)
+and a name (eg., json), it generates two methods: self.{{ name }}, which given a string, will set the
+Content-Type header to the given MIME type and the body to that string, and self.{{ name }}_file, which
+behaves like self.{{ name }}, but which treats the string as filename and reads it instead of setting
+the body to it.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+</body>
+</html>

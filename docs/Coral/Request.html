@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="crystal_docs.project_version" content="0.1.0">
+<meta name="crystal_docs.project_name" content="coral">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="coral">
+  <title>Coral::Request - coral 0.1.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          coral
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.1.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="coral/toplevel" data-name="top level namespace">
+      <a href="../toplevel.html">Top Level Namespace</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="coral/Coral" data-name="coral">
+      <a href="../Coral.html">Coral</a>
+      
+        <ul>
+  
+  <li class=" " data-id="coral/Coral/BodyParser" data-name="coral::bodyparser">
+      <a href="../Coral/BodyParser.html">BodyParser</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/JSONBodyParser" data-name="coral::jsonbodyparser">
+      <a href="../Coral/JSONBodyParser.html">JSONBodyParser</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/MultipartFile" data-name="coral::multipartfile">
+      <a href="../Coral/MultipartFile.html">MultipartFile</a>
+      
+    </li>
+  
+  <li class=" current" data-id="coral/Coral/Request" data-name="coral::request">
+      <a href="../Coral/Request.html">Request</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/Response" data-name="coral::response">
+      <a href="../Coral/Response.html">Response</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/Server" data-name="coral::server">
+      <a href="../Coral/Server.html">Server</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/URLBodyParser" data-name="coral::urlbodyparser">
+      <a href="../Coral/URLBodyParser.html">URLBodyParser</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="coral/Status" data-name="status">
+      <a href="../Status.html">Status</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Coral::Request
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Coral/Request.html">Coral::Request</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Base request class. Passed as a parameter to all handlers; should not be created manually. It defines several
+properties for convenience, and also several class methods used in the creation of requests.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(method:String,path:String,headers:HeaderMap,body:BodyType)-class-method" class="signature"><strong>.new</strong>(method : String, path : String, headers : HeaderMap, body : BodyType)</a>
+        
+          <div class="summary"><p>Creates a new request.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#from(body:String)-class-method" class="signature"><strong>.from</strong>(body : String)</a>
+        
+          <div class="summary"><p>Given the raw string body of an HTTP request, creates a request.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parse_cookies(header:String)-class-method" class="signature"><strong>.parse_cookies</strong>(header : String)</a>
+        
+          <div class="summary"><p>Parses a <code>Cookie</code> header into a <code>Hash(String, String)</code> representing all passed cookies.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parse_multipart(data:String,boundary:String)-class-method" class="signature"><strong>.parse_multipart</strong>(data : String, boundary : String)</a>
+        
+          <div class="summary"><p>Parses a mutlipart form body (ie., MIME type <code>multipart/form-data</code>) into a <code>Hash(String, <a href="../Coral/MultipartFile.html">Coral::MultipartFile</a>)</code> mapping the name fields of inputs to <code><a href="../Coral/MultipartFile.html">Coral::MultipartFile</a></code> objects.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#body:Hash(String,String)%7CJSON::Any%7CString%7CNil-instance-method" class="signature"><strong>#body</strong> : Hash(String, String) | JSON::Any | String | Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#body=(body)-instance-method" class="signature"><strong>#body=</strong>(body)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cookies:CookieMap-instance-method" class="signature"><strong>#cookies</strong> : CookieMap</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#files:FileMap-instance-method" class="signature"><strong>#files</strong> : FileMap</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#headers:HeaderMap-instance-method" class="signature"><strong>#headers</strong> : HeaderMap</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#method:String-instance-method" class="signature"><strong>#method</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#path:String-instance-method" class="signature"><strong>#path</strong> : String</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(method:String,path:String,headers:HeaderMap,body:BodyType)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(method : String, path : String, headers : HeaderMap, body : BodyType)
+
+        <a class="method-permalink" href="#new(method:String,path:String,headers:HeaderMap,body:BodyType)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a new request. Should never be called manually.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="from(body:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>from</strong>(body : String)
+
+        <a class="method-permalink" href="#from(body:String)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Given the raw string body of an HTTP request, creates a request. Uses simple regex to parse the HTTP version number,
+headers, and body. This method can be called manually, but usually is handled by the server.
+Example:</p>
+
+<pre><code><span class="t">Coral</span><span class="t">::</span><span class="t">Request</span>.from <span class="s">&quot;GET / HTTP/1.1\nHost: http://example.com\n&quot;</span> <span class="c"># =&gt; &lt;Request&gt;</span></code></pre>
+
+<p>Like <code><a href="../Coral/Request.html#parse_cookies(header:String)-class-method">#parse_cookies</a></code> and <code><a href="../Coral/Request.html#parse_multipart(data:String,boundary:String)-class-method">#parse_multipart</a></code>, this method assumes validity of input, and so you should take care
+when calling it yourself.</p>
+
+<p><span class="flag purple">NOTE</span>  this method uses "\n" as a seperator, rather than the default "\r\n". This is because the server passes it
+input in that format, rather than the default. If calling manually, keep this in mind.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parse_cookies(header:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>parse_cookies</strong>(header : String)
+
+        <a class="method-permalink" href="#parse_cookies(header:String)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Parses a <code>Cookie</code> header into a <code>Hash(String, String)</code> representing all passed cookies. Works by splitting
+the header on ";" characters, then splitting those on "=" characters to generate key value pairs. Mainly used
+for parsing cookies when a request object is created, but can be invoked manually.
+Example:</p>
+
+<pre><code><span class="t">Coral</span><span class="t">::</span><span class="t">Request</span>.parse_cookies <span class="s">&quot;a=b;c=d&quot;</span> <span class="c"># { &quot;a&quot; =&gt; &quot;b&quot;, &quot;c&quot; =&gt; &quot;d&quot; }</span></code></pre>
+
+<p><span class="flag purple">NOTE</span>  this function assumes any passed input is valid, and will throw an exception if it is not. If you are
+calling it manually, be sure to validate input first.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parse_multipart(data:String,boundary:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>parse_multipart</strong>(data : String, boundary : String)
+
+        <a class="method-permalink" href="#parse_multipart(data:String,boundary:String)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Parses a mutlipart form body (ie., MIME type <code>multipart/form-data</code>) into a <code>Hash(String, <a href="../Coral/MultipartFile.html">Coral::MultipartFile</a>)</code>
+mapping the name fields of inputs to <code><a href="../Coral/MultipartFile.html">Coral::MultipartFile</a></code> objects. This as well is used mainly in creating
+a request, but it can also be called manually. Takes as input the multipart data, and its boundary string.
+Like #parse_cookies, it assumes the input is valid, so be sure to validate it yourself if you call this manually.</p>
+
+<p><span class="flag orange">TODO</span>  since this is mainly used for body parsing, it could potentially be migrated to a subclass of
+<code><a href="../Coral/BodyParser.html">Coral::BodyParser</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="body:Hash(String,String)|JSON::Any|String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>body</strong> : Hash(String, String) | JSON::Any | String | Nil
+
+        <a class="method-permalink" href="#body:Hash(String,String)%7CJSON::Any%7CString%7CNil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="body=(body)-instance-method">
+      <div class="signature">
+        
+        def <strong>body=</strong>(body)
+
+        <a class="method-permalink" href="#body=(body)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cookies:CookieMap-instance-method">
+      <div class="signature">
+        
+        def <strong>cookies</strong> : CookieMap
+
+        <a class="method-permalink" href="#cookies:CookieMap-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="files:FileMap-instance-method">
+      <div class="signature">
+        
+        def <strong>files</strong> : FileMap
+
+        <a class="method-permalink" href="#files:FileMap-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="headers:HeaderMap-instance-method">
+      <div class="signature">
+        
+        def <strong>headers</strong> : HeaderMap
+
+        <a class="method-permalink" href="#headers:HeaderMap-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="method:String-instance-method">
+      <div class="signature">
+        
+        def <strong>method</strong> : String
+
+        <a class="method-permalink" href="#method:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="path:String-instance-method">
+      <div class="signature">
+        
+        def <strong>path</strong> : String
+
+        <a class="method-permalink" href="#path:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

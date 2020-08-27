@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="crystal_docs.project_version" content="0.1.0">
+<meta name="crystal_docs.project_name" content="coral">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="coral">
+  <title>Coral::Server - coral 0.1.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          coral
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.1.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="coral/toplevel" data-name="top level namespace">
+      <a href="../toplevel.html">Top Level Namespace</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="coral/Coral" data-name="coral">
+      <a href="../Coral.html">Coral</a>
+      
+        <ul>
+  
+  <li class=" " data-id="coral/Coral/BodyParser" data-name="coral::bodyparser">
+      <a href="../Coral/BodyParser.html">BodyParser</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/JSONBodyParser" data-name="coral::jsonbodyparser">
+      <a href="../Coral/JSONBodyParser.html">JSONBodyParser</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/MultipartFile" data-name="coral::multipartfile">
+      <a href="../Coral/MultipartFile.html">MultipartFile</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/Request" data-name="coral::request">
+      <a href="../Coral/Request.html">Request</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/Response" data-name="coral::response">
+      <a href="../Coral/Response.html">Response</a>
+      
+    </li>
+  
+  <li class=" current" data-id="coral/Coral/Server" data-name="coral::server">
+      <a href="../Coral/Server.html">Server</a>
+      
+    </li>
+  
+  <li class=" " data-id="coral/Coral/URLBodyParser" data-name="coral::urlbodyparser">
+      <a href="../Coral/URLBodyParser.html">URLBodyParser</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="coral/Status" data-name="status">
+      <a href="../Status.html">Status</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Coral::Server
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Coral/Server.html">Coral::Server</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(port:Int32,cap:Int32=32)-class-method" class="signature"><strong>.new</strong>(port : Int32, cap : Int32 = <span class="n">32</span>)</a>
+        
+          <div class="summary"><p>Creates a server.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#delete(path:String,&handler:Proc(Request,Response))-instance-method" class="signature"><strong>#delete</strong>(path : String, &handler : Proc(Request, Response))</a>
+        
+          <div class="summary"><p>Creates handlers for requests with the "delete" method.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get(path:String,&handler:Proc(Request,Response))-instance-method" class="signature"><strong>#get</strong>(path : String, &handler : Proc(Request, Response))</a>
+        
+          <div class="summary"><p>Creates handlers for requests with the "get" method.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#head(path:String,&handler:Proc(Request,Response))-instance-method" class="signature"><strong>#head</strong>(path : String, &handler : Proc(Request, Response))</a>
+        
+          <div class="summary"><p>Creates handlers for requests with the "head" method.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#options(path:String,&handler:Proc(Request,Response))-instance-method" class="signature"><strong>#options</strong>(path : String, &handler : Proc(Request, Response))</a>
+        
+          <div class="summary"><p>Creates handlers for requests with the "options" method.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#patch(path:String,&handler:Proc(Request,Response))-instance-method" class="signature"><strong>#patch</strong>(path : String, &handler : Proc(Request, Response))</a>
+        
+          <div class="summary"><p>Creates handlers for requests with the "patch" method.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#port:Int32-instance-method" class="signature"><strong>#port</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#post(path:String,&handler:Proc(Request,Response))-instance-method" class="signature"><strong>#post</strong>(path : String, &handler : Proc(Request, Response))</a>
+        
+          <div class="summary"><p>Creates handlers for requests with the "post" method.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#put(path:String,&handler:Proc(Request,Response))-instance-method" class="signature"><strong>#put</strong>(path : String, &handler : Proc(Request, Response))</a>
+        
+          <div class="summary"><p>Creates handlers for requests with the "put" method.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_parser(content_type:String,parser:BodyParser)-instance-method" class="signature"><strong>#set_parser</strong>(content_type : String, parser : BodyParser)</a>
+        
+          <div class="summary"><p>Adds a custom parser to the server.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#start-instance-method" class="signature"><strong>#start</strong></a>
+        
+          <div class="summary"><p>Starts the server.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#state:State-instance-method" class="signature"><strong>#state</strong> : State</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(port:Int32,cap:Int32=32)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(port : Int32, cap : Int32 = <span class="n">32</span>)
+
+        <a class="method-permalink" href="#new(port:Int32,cap:Int32=32)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a server. This is meant to be called manually. Unlike response, there are no alternate constructors. It
+takes two parameters: the port and optionally capacity. Capacity is the size of the channel for requests - a
+small value will cause blocking if too many requests occur at once. The default is 32.
+Example:</p>
+
+<pre><code><span class="t">Coral</span><span class="t">::</span><span class="t">Server</span>.<span class="k">new</span> <span class="n">3000</span> <span class="c"># =&gt; &lt;Server&gt;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="delete(path:String,&handler:Proc(Request,Response))-instance-method">
+      <div class="signature">
+        
+        def <strong>delete</strong>(path : String, &handler : Proc(<a href="../Coral/Request.html">Request</a>, <a href="../Coral/Response.html">Response</a>))
+
+        <a class="method-permalink" href="#delete(path:String,&handler:Proc(Request,Response))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates handlers for requests with the "delete" method. Given a path and a block or proc,
+associates a delete request to that path with the given block or proc.
+Example:</p>
+
+<pre><code>server.delete <span class="s">&quot;/&quot;</span> <span class="k">do</span> <span class="o">|</span>req<span class="o">|</span>
+  ...
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get(path:String,&handler:Proc(Request,Response))-instance-method">
+      <div class="signature">
+        
+        def <strong>get</strong>(path : String, &handler : Proc(<a href="../Coral/Request.html">Request</a>, <a href="../Coral/Response.html">Response</a>))
+
+        <a class="method-permalink" href="#get(path:String,&handler:Proc(Request,Response))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates handlers for requests with the "get" method. Given a path and a block or proc,
+associates a get request to that path with the given block or proc.
+Example:</p>
+
+<pre><code>server.get <span class="s">&quot;/&quot;</span> <span class="k">do</span> <span class="o">|</span>req<span class="o">|</span>
+  ...
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="head(path:String,&handler:Proc(Request,Response))-instance-method">
+      <div class="signature">
+        
+        def <strong>head</strong>(path : String, &handler : Proc(<a href="../Coral/Request.html">Request</a>, <a href="../Coral/Response.html">Response</a>))
+
+        <a class="method-permalink" href="#head(path:String,&handler:Proc(Request,Response))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates handlers for requests with the "head" method. Given a path and a block or proc,
+associates a head request to that path with the given block or proc.
+Example:</p>
+
+<pre><code>server.head <span class="s">&quot;/&quot;</span> <span class="k">do</span> <span class="o">|</span>req<span class="o">|</span>
+  ...
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="options(path:String,&handler:Proc(Request,Response))-instance-method">
+      <div class="signature">
+        
+        def <strong>options</strong>(path : String, &handler : Proc(<a href="../Coral/Request.html">Request</a>, <a href="../Coral/Response.html">Response</a>))
+
+        <a class="method-permalink" href="#options(path:String,&handler:Proc(Request,Response))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates handlers for requests with the "options" method. Given a path and a block or proc,
+associates a options request to that path with the given block or proc.
+Example:</p>
+
+<pre><code>server.options <span class="s">&quot;/&quot;</span> <span class="k">do</span> <span class="o">|</span>req<span class="o">|</span>
+  ...
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="patch(path:String,&handler:Proc(Request,Response))-instance-method">
+      <div class="signature">
+        
+        def <strong>patch</strong>(path : String, &handler : Proc(<a href="../Coral/Request.html">Request</a>, <a href="../Coral/Response.html">Response</a>))
+
+        <a class="method-permalink" href="#patch(path:String,&handler:Proc(Request,Response))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates handlers for requests with the "patch" method. Given a path and a block or proc,
+associates a patch request to that path with the given block or proc.
+Example:</p>
+
+<pre><code>server.patch <span class="s">&quot;/&quot;</span> <span class="k">do</span> <span class="o">|</span>req<span class="o">|</span>
+  ...
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="port:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>port</strong> : Int32
+
+        <a class="method-permalink" href="#port:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="post(path:String,&handler:Proc(Request,Response))-instance-method">
+      <div class="signature">
+        
+        def <strong>post</strong>(path : String, &handler : Proc(<a href="../Coral/Request.html">Request</a>, <a href="../Coral/Response.html">Response</a>))
+
+        <a class="method-permalink" href="#post(path:String,&handler:Proc(Request,Response))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates handlers for requests with the "post" method. Given a path and a block or proc,
+associates a post request to that path with the given block or proc.
+Example:</p>
+
+<pre><code>server.post <span class="s">&quot;/&quot;</span> <span class="k">do</span> <span class="o">|</span>req<span class="o">|</span>
+  ...
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="put(path:String,&handler:Proc(Request,Response))-instance-method">
+      <div class="signature">
+        
+        def <strong>put</strong>(path : String, &handler : Proc(<a href="../Coral/Request.html">Request</a>, <a href="../Coral/Response.html">Response</a>))
+
+        <a class="method-permalink" href="#put(path:String,&handler:Proc(Request,Response))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates handlers for requests with the "put" method. Given a path and a block or proc,
+associates a put request to that path with the given block or proc.
+Example:</p>
+
+<pre><code>server.put <span class="s">&quot;/&quot;</span> <span class="k">do</span> <span class="o">|</span>req<span class="o">|</span>
+  ...
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_parser(content_type:String,parser:BodyParser)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_parser</strong>(content_type : String, parser : <a href="../Coral/BodyParser.html">BodyParser</a>)
+
+        <a class="method-permalink" href="#set_parser(content_type:String,parser:BodyParser)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Adds a custom parser to the server. Takes as input the MIME type this parser is meant to parse, and a subclass
+of <code><a href="../Coral/BodyParser.html">BodyParser</a></code>, implementing <code>self.parse</code>. This can be used to overwrite old parsers.
+Example:</p>
+
+<pre><code>server.set_parser <span class="s">&quot;application/gzip&quot;</span>, <span class="t">MyGzipParser</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="start-instance-method">
+      <div class="signature">
+        
+        def <strong>start</strong>
+
+        <a class="method-permalink" href="#start-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Starts the server. Takes no parameters.
+Example:</p>
+
+<pre><code>server.start</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="state:State-instance-method">
+      <div class="signature">
+        
+        def <strong>state</strong> : State
+
+        <a class="method-permalink" href="#state:State-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
